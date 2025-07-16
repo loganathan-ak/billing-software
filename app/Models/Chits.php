@@ -22,6 +22,8 @@ class Chits extends Model
       'chit_status',
       'wallet_balance', 
       'totally_paid_amount',
+      'chit_status', 
+
   ];
 
 }

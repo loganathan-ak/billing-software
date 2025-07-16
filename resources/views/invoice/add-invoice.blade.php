@@ -320,8 +320,7 @@ $(document).ready(function() {
                             label: customer.phone + " - " + customer.name,
                             value: customer.phone,
                             id: customer.id,
-                            name: customer.name,
-                            chits: customer.chits ?? []
+                            name: customer.name
                         };
                     }));
                 }
@@ -448,6 +447,10 @@ function updateSubtotal() {
 }
 
 function updateDiscountAmount() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1f18582b3f5bf4bf30959ea505ef9fdb824ac081
     console.log('#discount_amount');
     let discountPercent = parseFloat($("#discount_percent").val()) || 0;
     let subtotal = parseFloat($('#input_subtotal').val()) || 0;

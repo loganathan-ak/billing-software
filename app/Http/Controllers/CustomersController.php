@@ -165,7 +165,6 @@ $customers = Customers::where('contact_number', 'LIKE', '%' . $term . '%')
 }
 
 
-
 public function searchQuery(Request $request)
 {
     $query = $request->input('query');
