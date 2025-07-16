@@ -721,7 +721,7 @@ $(document).on('input', '.quantity, .price, .tax, .total, #discount_percent', fu
 
     function updateCheckboxRequirement() {
         const balance = parseFloat($balanceInput.val()) || 0;
-        if (balance < 0) {
+        if (balance > 0) {
             $returnChangeCheckbox.prop('required', true).closest('label').show();
         } else {
             $returnChangeCheckbox.prop('required', false).prop('checked', false).closest('label').hide();
@@ -731,7 +731,7 @@ $(document).on('input', '.quantity, .price, .tax, .total, #discount_percent', fu
     function adjustPaidAmountBasedOnCheckbox() {
         let balance = parseFloat($balanceInput.val()) || 0;
 
-        if ($returnChangeCheckbox.is(':checked') && balance < 0) {
+        if ($returnChangeCheckbox.is(':checked') && balance > 0) {
             // Increase paid amount by the overpaid value to make balance zero
             $paidAmountInput.val(originalPaidAmount + balance); // balance is negative, so subtracting a negative adds
             $balanceInput.val(0);

@@ -139,13 +139,13 @@ public function autocomplete(Request $request)
 {
     $term = $request->get('term');
 
-    $customers = Customers::where('contact_number', 'LIKE', '%' . $term . '%')
-        ->with(['chits' => function ($query) {
-            $query->where('chit_type', 'new')
-                ->select('id', 'customer_id', 'chit_number', 'wallet_balance');
-        }])
-        ->get();
-
+$customers = Customers::where('contact_number', 'LIKE', '%' . $term . '%')
+    ->with(['chits' => function ($query) {
+        $query->where('chit_type', 'new')
+              ->where('chit_status', 'completed')
+              ->select('id', 'customer_id', 'chit_number', 'wallet_balance'); // customer_id is required here
+    }])
+    ->get();
 
     // Map the response
     return response()->json($customers->map(function ($customer) {

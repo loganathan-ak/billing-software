@@ -82,6 +82,7 @@
                         <th class="p-4 text-left border-b border-gray-200">Payment Date</th>
                         <th class="p-4 text-left border-b border-gray-200">Amount Paid</th>
                         <th class="p-4 text-left border-b border-gray-200">Due Status</th>
+                        <th class="p-4 text-left border-b border-gray-200">Action</th>
                     </tr>
                 </thead>
                 <tbody id="payment_records_tbody" class="text-sm text-gray-800">
@@ -97,6 +98,7 @@
                                     <span class="text-green-600 font-medium">Paid</span>
                                 @endif
                             </td>
+                            <td><a href="">Edit</a></td>
                         </tr>
                     @empty
                         <tr>

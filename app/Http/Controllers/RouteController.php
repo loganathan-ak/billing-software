@@ -313,6 +313,13 @@ class RouteController extends Controller
     
         return view('chits.add-chit', compact('customers', 'newChitNumber'));
     }
+
+    public function updateChit($id){
+        $chit = Chits::findOrFail($id);
+        $customer = Customers::find($chit->customer_id); // Get related customer
+        return view('chits.edit-main-chit', compact('chit', 'customer'));
+    }
+
     
 
 }

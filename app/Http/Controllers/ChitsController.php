@@ -118,6 +118,23 @@ class ChitsController extends Controller
     $customers = Customers::get();
     return view('chits.view-chit', compact('chit', 'customers', 'paidmonths'));
    }
+
+
+
+   public function updateChit(Request $request, $id){
+    // Validate the input
+    $request->validate([
+        'status' => 'required|in:in_progress,completed,cancelled,on-hold', // add any other allowed statuses
+    ]);
+
+    // Find the chit and update the status
+    $chit = Chits::findOrFail($id);
+    $chit->chit_status = $request->status;
+    $chit->save();
+
+    // Redirect with a success message
+    return redirect()->route('chits')->with('success', 'Chit status updated successfully.');
+    }
     
 
 

@@ -195,6 +195,10 @@ Route::get('/get-chit-details/{chitNumber}', [ChitsController::class, 'getChitDe
 
 Route::get('/view-chit/{id}', [ChitsController::class, 'viewChit'])->name('view.chit');
 
+Route::get('/main-chit-update/{id}', [RouteController::class, 'updateChit'])->name('chit.update');
+
+Route::put('/main-chit-update/{id}', [ChitsController::class, 'updateChit'])->name('chit.update');
+
 
 
 

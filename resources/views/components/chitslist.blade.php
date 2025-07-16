@@ -69,7 +69,7 @@
                                 <td class="px-4 py-4 text-sm text-gray-600 ">{{ $chit->month_number }} / {{ $chit->total_months }}</td>
                                 <td class="px-4 py-4 text-sm text-blue-600  whitespace-nowrap">
                                     <a href="{{route('view.chit', $chit->id)}}" class="mr-2 hover:underline">View</a>
-                                    <a href="/edit-chit/{{ $chit->id }}" class="hover:underline">Edit</a>
+                                    <a href="{{ route('chit.update', $chit->id) }}" class="hover:underline">Edit</a>
                                 </td>
                             </tr>
                             @endforeach
